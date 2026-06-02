@@ -12,7 +12,7 @@
   background-color: var(--background-color);
 }
 .cards .cards-card-body {
-  margin: 16px;
+  margin: 1rem;
 }
 
 .cards .cards-card-image {
