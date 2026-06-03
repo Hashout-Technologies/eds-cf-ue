@@ -13,7 +13,7 @@
 .hero {
     position: relative;
     padding: calc(var(--nav-height, 64px) + 60px) 24px 160px; /* Deep bottom padding for overlap space */
-    background-image: url('/images/blue-standard.jpg');
+    background-image: url("/images/blue-standard.jpg");
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -36,15 +36,22 @@
     color: #fff;
     text-transform: uppercase;
     letter-spacing: -0.5px;
+    font-family: var(--alliance2-font-family);
     font-weight: 700;
     line-height: 1.15;
-    font-size: clamp(28px, 5vw, 48px); /* Clean, balanced size scaling */
+    font-size: clamp(28px, 5vw, 48px);
     text-shadow: none;
 }
 
 .hero h1 .hero-gradient {
     background-color: #f3ec78;
-    background-image: linear-gradient(90deg, #fedd00, #00bd4d 44%, #00bd4d 65%, #00e2ec);
+    background-image: linear-gradient(
+        90deg,
+        #fedd00,
+        #00bd4d 44%,
+        #00bd4d 65%,
+        #00e2ec
+    );
     background-size: 100%;
     background-clip: text;
     /* stylelint-disable-next-line property-no-vendor-prefix */
@@ -60,6 +67,6 @@
 
     .hero h1 {
         font-size: var(--heading-font-size-xxl, 45px);
-        font-weight: 800;
+        font-weight: 700;
     }
 }

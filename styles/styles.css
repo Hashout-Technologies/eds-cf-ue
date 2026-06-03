@@ -1,43 +1,24 @@
-/*
- * Copyright 2020 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */
-
 :root {
-    /* colors */
     --background-color: white;
     --light-color: #f8f8f8;
     --dark-color: #505050;
     --text-color: #131313;
     --link-color: #3b63fb;
     --link-hover-color: #1d3ecf;
-
-    /* fonts */
     --body-font-family: roboto, roboto-fallback, sans-serif;
     --heading-font-family:
         roboto-condensed, roboto-condensed-fallback, sans-serif;
-
-    /* body sizes */
+    --alliance-font-family: "Alliance No.1", sans-serif;
+    --alliance2-font-family: "Alliance No.2", sans-serif;
     --body-font-size-m: 22px;
     --body-font-size-s: 19px;
     --body-font-size-xs: 17px;
-
-    /* heading sizes */
     --heading-font-size-xxl: 72px;
     --heading-font-size-xl: 48px;
     --heading-font-size-l: 34px;
     --heading-font-size-m: 27px;
     --heading-font-size-s: 24px;
     --heading-font-size-xs: 22px;
-
-    /* layout offsets */
     --content-offset: 56px;
 
     /* nav height */
@@ -62,12 +43,9 @@
 
 @media (width >= 900px) {
     :root {
-        /* body sizes */
         --body-font-size-m: 18px;
         --body-font-size-s: 16px;
         --body-font-size-xs: 14px;
-
-        /* heading sizes */
         --heading-font-size-xxl: 45px;
         --heading-font-size-xl: 36px;
         --heading-font-size-l: 28px;
@@ -177,19 +155,16 @@ button {
     font: inherit;
 }
 
-/* links */
 a:any-link {
-    color: var(--link-color);
+    color: rgb(18 194 211);
     text-decoration: none;
     overflow-wrap: break-word;
 }
 
 a:hover {
-    color: var(--link-hover-color);
     text-decoration: underline;
 }
 
-/* buttons */
 p.button-wrapper {
     margin: 12px 0;
 }
@@ -275,7 +250,6 @@ button.button.secondary:disabled:focus-visible {
     color: var(--dark-color);
 }
 
-/* high-impact call-to-action */
 a.button.accent,
 button.button.accent {
     border-color: var(--link-color);
@@ -319,7 +293,6 @@ main img {
     width: 100%;
 }
 
-/* sections */
 main > .section {
     margin: 40px 0;
 }
@@ -340,7 +313,6 @@ main > .section:first-of-type {
     }
 }
 
-/* section metadata */
 main .section.light,
 main .section.highlight {
     background-color: var(--light-color);
@@ -348,9 +320,6 @@ main .section.highlight {
     padding: 40px 0;
 }
 
-/* Add these specific additions to the bottom of your styles.css */
-
-/* Breadcrumbs (for the top of the hero) */
 .breadcrumbs {
     max-width: 1200px;
     width: 100%;
@@ -369,7 +338,6 @@ main .section.highlight {
     }
 }
 
-/* Social Share Icons (Left side of article) */
 .social-share {
     position: absolute;
     left: 20px;
@@ -378,43 +346,6 @@ main .section.highlight {
     flex-direction: column;
     gap: 12px;
 }
-
-.social-share span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    border: 1px solid #ccc;
-    color: #555;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-/* Article Meta (Date) */
-.article-meta {
-    color: #888;
-    font-size: 14px;
-    margin-bottom: 24px;
-}
-
-/* Sidebar Dropdown Accordions */
-.dropdown-widget {
-    border: 1px solid #ddd;
-    padding: 12px 16px;
-    margin-bottom: 8px;
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
-    color: #333;
-    background: #fff;
-    cursor: pointer;
-}
-
-/* ==========================================================================
-   Blog Layout: Two-Column Grid
-   ========================================================================== */
 
 .blog-layout-grid {
     display: grid;
@@ -427,25 +358,19 @@ main .section.highlight {
 
 @media (width >= 900px) {
     .blog-layout-grid {
-        /* roughly a 70% / 30% split for content vs sidebar */
         grid-template-columns: 1fr 340px;
         gap: 60px;
         padding: 0 32px;
     }
 }
 
-/* ==========================================================================
-   Left Column: Content & Social
-   ========================================================================== */
-
 .blog-main-content {
     position: relative;
 }
 
-/* Float social share icons to the left on desktop */
 @media (width >= 900px) {
     .blog-main-content {
-        padding-left: 60px; /* Make room for absolute positioned social icons */
+        padding-left: 60px;
     }
 
     .social-share {
@@ -458,7 +383,6 @@ main .section.highlight {
     }
 }
 
-/* Mobile Social Share Fallback */
 @media (width < 900px) {
     .social-share {
         display: flex;
@@ -537,7 +461,7 @@ main .section.highlight {
     margin-top: 0;
     margin-bottom: 24px;
     font-size: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgb(255 255 255 / 10%);
     padding-bottom: 16px;
 }
 
@@ -553,7 +477,7 @@ main .section.highlight {
     color: #e0e0e0;
     font-size: 15px;
     line-height: 1.4;
-    margin: 0 0 8px 0;
+    margin: 0 0 8px;
 }
 
 .sidebar-widget.latest-posts article a {
@@ -621,70 +545,59 @@ main .section.highlight {
     box-shadow: none !important;
     padding: 0 !important;
 }
+
 /* ==========================================================================
-   Right Sidebar Pixel-Perfect Fix 
+   Right Sidebar Pixel-Perfect Fix (High Specificity, No !important)
    ========================================================================== */
 
-/* 1. RESET RIGHT COLUMN */
-.columns.blog-columns > div > div:nth-child(2) {
-    background: transparent !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-}
-
-/* 2. REAL SEARCH BOX (Targeting the injected input) */
-.blog-search-input {
-    width: 100%;
-    border: 1px solid #e0e0e0;
-    padding: 14px 16px;
-    color: #111;
-    font-size: 16px;
-    background: #fff url("/icons/search.svg") no-repeat right 16px center;
-    background-size: 20px;
-    margin: 0 0 24px 0;
-    box-sizing: border-box;
-    font-family: inherit;
-    border-radius: 0;
-}
-.blog-search-input:focus {
-    outline: none;
-    border-color: #0c161d; /* Dark border on focus */
+/* 1. RESET RIGHT COLUMN (Beats columns.css specificity) */
+main .columns.blog-columns.block > div > div:nth-child(2) {
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
 }
 
 /* 3. LATEST POSTS HEADER */
-.columns.blog-columns > div > div:nth-child(2) > h3 {
+main .columns.blog-columns.block > div > div:nth-child(2) > h3 {
     background-color: #0c161d; /* Perfect dark slate */
-    border-top: 5px solid #41b02a; /* Infoblox green */
-    color: #ffffff;
+    border-top: 7px solid rgb(0 189 77); /* Infoblox green */
+    color: #fff;
     margin: 0;
-    padding: 32px 32px 24px 32px;
-    font-size: 24px;
+    padding: 32px 32px 24px;
+    font-size: 18px;
     font-weight: 700;
     line-height: 1;
+    position: relative;
+    z-index: 40; /* Ensures it sits above any hero overlap */
 }
 
 /* 4. LATEST POSTS BODY (Stitching the paragraphs together) */
-.columns.blog-columns > div > div:nth-child(2) > h3 + p,
-.columns.blog-columns > div > div:nth-child(2) > h3 + p + p,
-.columns.blog-columns > div > div:nth-child(2) > h3 + p + p + p,
-.columns.blog-columns > div > div:nth-child(2) > h3 + p + p + p + p {
+main .columns.blog-columns.block > div > div:nth-child(2) > h3 + p,
+main .columns.blog-columns.block > div > div:nth-child(2) > h3 + p + p,
+main .columns.blog-columns.block > div > div:nth-child(2) > h3 + p + p + p,
+main .columns.blog-columns.block > div > div:nth-child(2) > h3 + p + p + p + p {
     background-color: #0c161d;
     color: #e0e0e0;
     margin: 0;
-    padding: 0 32px 28px 32px;
+    padding: 0 32px 28px;
     font-size: 18px;
     font-weight: 300;
     line-height: 1.35;
+    position: relative;
+    z-index: 40;
 }
 
 /* Close the bottom of the black box */
-.columns.blog-columns > div > div:nth-child(2) > h3 + p + p + p + p {
+main .columns.blog-columns.block > div > div:nth-child(2) > h3 + p + p + p + p {
     padding-bottom: 32px;
     margin-bottom: 24px;
 }
 
 /* 5. READ MORE LINKS */
-.columns.blog-columns > div > div:nth-child(2) > h3 ~ p a {
+main .columns.blog-columns.block > div > div:nth-child(2) > h3 ~ p a {
     color: #00c0e3; /* Cyan */
     font-weight: 700;
     display: inline-block;
@@ -692,127 +605,38 @@ main .section.highlight {
     text-decoration: none;
     font-size: 16px;
 }
-.columns.blog-columns > div > div:nth-child(2) > h3 ~ p a:hover {
+
+main .columns.blog-columns.block > div > div:nth-child(2) > h3 ~ p a:hover {
     color: white;
 }
 
-/* ==========================================================================
-   Blog Labels & Author Profile (Structural Target Overrides)
-   ========================================================================== */
-
-/* 1. Labels Marker (First HR - keep it invisible) */
-.columns.blog-columns > div > div:nth-child(1) hr:nth-of-type(1) {
-    border: 0;
-    height: 1px;
-    margin: 40px 0 0 0;
-    background: transparent;
-}
-
-/* 2. "Labels:" Text (Floats left to sit inline with the pills) */
-.columns.blog-columns > div > div:nth-child(1) hr:nth-of-type(1) + p {
-    float: left;
-    margin-right: 12px;
-    margin-top: 6px; /* Aligns the text vertically with the pill boxes */
-    margin-bottom: 0;
-    color: #131313;
-    font-size: 16px;
-}
-
-/* 3. Label Pills (The <ul> list forces a row layout) */
-.columns.blog-columns > div > div:nth-child(1) hr:nth-of-type(1) + p + ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    overflow: hidden; /* Clears the float so it stays perfectly inline */
-}
-
-.columns.blog-columns > div > div:nth-child(1) hr:nth-of-type(1) + p + ul li {
-    background-color: #f0f0f0;
-    color: #555;
-    padding: 6px 14px;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 600;
-    margin: 0;
-    text-transform: capitalize; /* Optional: Capitalizes the first letter */
-}
-
-.columns.blog-columns > div > div:nth-child(1) hr:nth-of-type(1) + p + ul li {
-    background-color: #f0f0f0;
-    color: #555;
-    padding: 6px 14px;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 600;
-    margin: 0;
-}
-
-/* 4. Author Separator Line (Second HR) */
-.columns.blog-columns > div > div:nth-child(1) hr:nth-of-type(2) {
-    border: 0;
-    border-top: 1px solid #e0e0e0;
-    margin: 40px 0;
-}
-
-/* 5. Author Image Container */
-.columns.blog-columns > div > div:nth-child(1) hr:nth-of-type(2) + p {
-    float: left;
-    margin-right: 32px;
-    margin-bottom: 16px;
-    width: 140px;
-    height: 140px;
-}
-
-/* Make Author Image Circular */
-.columns.blog-columns > div > div:nth-child(1) hr:nth-of-type(2) + p picture,
-.columns.blog-columns > div > div:nth-child(1) hr:nth-of-type(2) + p img {
+main .columns.blog-columns.block > div > div:nth-child(2) > p:first-child,
+main .columns.blog-columns.block > div > div:nth-child(2) .blog-search-input {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
+    border: 1px solid #e0e0e0;
+    padding: 14px 16px;
+    color: #111;
+    font-size: 16px;
+    background-color: #fff;
+    background-image: url("/icons/search.svg");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 20px;
+    margin: 0 0 24px;
+    box-sizing: border-box;
+    font-family: inherit;
+    border-radius: 0;
+    position: relative;
+    z-index: 50;
     display: block;
-}
-/* 6. Author Name */
-.columns.blog-columns > div > div:nth-child(1) hr:nth-of-type(2) + p + h4 {
-    margin-top: 0;
-    padding-top: 8px;
-    font-size: 24px;
-    color: #131313;
-    margin-left: 172px; /* Forces text to stay in a strict right column */
+    cursor: text;
 }
 
-/* 7. Author Job Title */
-.columns.blog-columns > div > div:nth-child(1) hr:nth-of-type(2) + p + h4 + h5 {
-    color: #505050;
-    font-size: 17px;
-    font-weight: 400;
-    margin-top: 0;
-    margin-bottom: 16px;
-    margin-left: 172px; /* Forces text to stay in a strict right column */
-}
-
-/* 8. Author Bio */
-.columns.blog-columns
+main
+    .columns.blog-columns.block
     > div
-    > div:nth-child(1)
-    hr:nth-of-type(2)
-    + p
-    + h4
-    + h5
-    + p {
-    color: #505050;
-    font-size: 15px;
-    line-height: 1.6;
-    margin-top: 0;
-    margin-left: 172px; /* Prevents wrapping underneath the floated image */
-}
-
-/* Clearfix to ensure the bio doesn't bleed out of the column */
-.columns.blog-columns > div > div:nth-child(1)::after {
-    content: "";
-    display: table;
-    clear: both;
+    > div:nth-child(2)
+    .blog-search-input:focus {
+    outline: none;
+    border-color: #0c161d;
 }
