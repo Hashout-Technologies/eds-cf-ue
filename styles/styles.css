@@ -621,9 +621,8 @@ main .section.highlight {
     box-shadow: none !important;
     padding: 0 !important;
 }
-
 /* ==========================================================================
-   Right Sidebar Pixel-Perfect Fix (Pure CSS)
+   Right Sidebar Pixel-Perfect Fix 
    ========================================================================== */
 
 /* 1. RESET RIGHT COLUMN */
@@ -633,16 +632,23 @@ main .section.highlight {
     padding: 0 !important;
 }
 
-/* 2. SEARCH BOX (First P tag) */
-.columns.blog-columns > div > div:nth-child(2) > p:first-child {
+/* 2. REAL SEARCH BOX (Targeting the injected input) */
+.blog-search-input {
+    width: 100%;
     border: 1px solid #e0e0e0;
     padding: 14px 16px;
-    color: #888;
+    color: #111;
     font-size: 16px;
     background: #fff url("/icons/search.svg") no-repeat right 16px center;
     background-size: 20px;
     margin: 0 0 24px 0;
     box-sizing: border-box;
+    font-family: inherit;
+    border-radius: 0;
+}
+.blog-search-input:focus {
+    outline: none;
+    border-color: #0c161d; /* Dark border on focus */
 }
 
 /* 3. LATEST POSTS HEADER */
@@ -688,39 +694,6 @@ main .section.highlight {
 }
 .columns.blog-columns > div > div:nth-child(2) > h3 ~ p a:hover {
     color: white;
-}
-
-/* 6. DROPDOWNS (Last 3 P tags) */
-.columns.blog-columns > div > div:nth-child(2) > p:nth-last-child(1),
-.columns.blog-columns > div > div:nth-child(2) > p:nth-last-child(2),
-.columns.blog-columns > div > div:nth-child(2) > p:nth-last-child(3) {
-    border: 1px solid #e0e0e0;
-    margin: 0 0 16px 0;
-    padding: 16px 20px;
-    font-weight: 700;
-    color: #111;
-    background: #fff;
-    font-size: 18px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-}
-
-/* 7. DROPDOWN ARROWS (Recreating the perfect black box via CSS) */
-.columns.blog-columns > div > div:nth-child(2) > p:nth-last-child(1)::after,
-.columns.blog-columns > div > div:nth-child(2) > p:nth-last-child(2)::after,
-.columns.blog-columns > div > div:nth-child(2) > p:nth-last-child(3)::after {
-    content: "▼";
-    background-color: #0c161d;
-    color: white;
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: -16px -20px;
-    width: 58px;
-    height: 58px;
 }
 
 /* ==========================================================================
