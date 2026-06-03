@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>{{properties.title}}</title>
@@ -6,6 +6,7 @@
   <body>
     <header></header>
     <main>
+      
       <div>
         <div class="hero">
           <div>
@@ -15,80 +16,56 @@
           </div>
         </div>
       </div>
+
       <div>
         <div class="columns blog-columns">
           <div>
+            
             <div>
               {{{properties.elements.blogDescription.value}}}
 
-              <hr />
+              <hr>
               <p><strong>Labels:</strong></p>
               <ul>
                 {{#properties.elements.labels.value}}
-                <li>{{.}}</li>
+                  <li>{{.}}</li>
                 {{/properties.elements.labels.value}}
               </ul>
-              <hr />
+
+              <hr>
               <p>
                 <picture>
-                  <img
-                    src="https://author-p43719-e1936337.adobeaemcloud.com{{{properties.elements.image.value}}}"
-                    alt="Author Image"
-                  />
+                  <img src="https://author-p43719-e1936337.adobeaemcloud.com{{{properties.elements.image.value}}}" alt="Author Image">
                 </picture>
               </p>
               {{{properties.elements.authorDetails.value}}}
             </div>
 
-            <div class="blog-sidebar">
-              <div class="sidebar-search">
-                <input
-                  type="text"
-                  placeholder="Search..."
-                  aria-label="Search blog"
-                />
-              </div>
+            <div>
+              
+              <blockquote>Search...</blockquote>
 
-              <div class="sidebar-widget latest-posts">
-                <h3>Latest Posts</h3>
-                <p>
-                  The Half of Your Attack Surface Nobody Owns<br /><a href="#"
-                    >Read more »</a
-                  >
-                </p>
-                <p>
-                  Infoblox Earns Terraform Partner Premier Status for NIOS
-                  Provider<br /><a href="#">Read more »</a>
-                </p>
-                <p>
-                  What 550 Security Leaders Just Told Us about the Age of AI,
-                  and Why Preemptive Digital Risk Protection Can't Wait<br /><a
-                    href="#"
-                    >Read more »</a
-                  >
-                </p>
-                <p>
-                  Lookalike Domains Expose the iPhone Theft Economy<br /><a
-                    href="#"
-                    >Read more »</a
-                  >
-                </p>
-              </div>
+              <h3>Latest Posts</h3>
+              <ul>
+                <li>The Half of Your Attack Surface Nobody Owns<br><a href="#">Read more »</a></li>
+                <li>Infoblox Earns Terraform Partner Premier Status for NIOS Provider<br><a href="#">Read more »</a></li>
+                <li>What 550 Security Leaders Just Told Us about the Age of AI, and Why Preemptive Digital Risk Protection Can't Wait<br><a href="#">Read more »</a></li>
+                <li>Lookalike Domains Expose the iPhone Theft Economy<br><a href="#">Read more »</a></li>
+              </ul>
 
-              <div class="dropdown-widget">
-                <span>Popular Topics</span><span class="dropdown-arrow">▼</span>
-              </div>
-              <div class="dropdown-widget">
-                <span>Categories</span><span class="dropdown-arrow">▼</span>
-              </div>
-              <div class="dropdown-widget">
-                <span>Authors</span><span class="dropdown-arrow">▼</span>
-              </div>
+              <ol>
+                <li>Popular Topics <strong>▼</strong></li>
+                <li>Categories <strong>▼</strong></li>
+                <li>Authors <strong>▼</strong></li>
+              </ol>
+
             </div>
           </div>
         </div>
       </div>
+      
     </main>
     <footer></footer>
   </body>
 </html>
+

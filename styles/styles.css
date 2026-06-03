@@ -623,101 +623,116 @@ main .section.highlight {
 }
 
 /* ==========================================================================
-   Blog Sidebar Widgets Styling
+   Blog Sidebar Widgets (Targeting Native Elements to bypass AEM Sanitizer)
    ========================================================================== */
 
-.blog-sidebar {
+/* Structure the right column */
+.columns.blog-columns > div > div:nth-child(2) {
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
 }
 
-/* 1. Search Box */
-.sidebar-search input {
-    width: 100%;
+/* 1. Search Box (Targeting the blockquote) */
+.columns.blog-columns > div > div:nth-child(2) blockquote {
+    margin: 0;
     padding: 14px 16px;
     border: 1px solid #e0e0e0;
-    border-radius: 6px;
+    border-radius: 0;
     font-size: 16px;
-    box-sizing: border-box;
-    background: #fff;
-    box-shadow: 0 1px 3px rgb(0 0 0 / 2%);
-}
-.sidebar-search input:focus {
-    outline: none;
-    border-color: var(--brand-dark, #0b2b32);
+    background: #fff url('/icons/search.svg') no-repeat right 16px center;
+    background-size: 20px;
+    color: #888;
 }
 
-/* 2. Latest Posts Dark Widget */
-.sidebar-widget.latest-posts {
-    background-color: var(--brand-dark-2, #0f3740);
-    border-top: 4px solid var(--brand-accent, #00b69a);
-    padding: 24px 32px;
+/* 2. Latest Posts Dark Widget - Title Header */
+.columns.blog-columns > div > div:nth-child(2) h3 {
+    background-color: #111a22;
+    border-top: 6px solid #43b02a;
     color: white;
-    border-radius: 6px;
-    box-shadow: 0 10px 30px rgb(0 0 0 / 6%); /* Re-applies the shadow directly to the widget */
+    padding: 32px 24px 0 24px;
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
 }
-.sidebar-widget.latest-posts h3 {
-    color: white;
-    margin-top: 0;
-    margin-bottom: 24px;
-    font-size: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 16px;
+
+/* 2. Latest Posts Dark Widget - List Body */
+.columns.blog-columns > div > div:nth-child(2) ul {
+    background-color: #111a22;
+    padding: 0 24px 32px 24px;
+    margin: 0;
+    list-style: none;
 }
-.sidebar-widget.latest-posts p {
+
+.columns.blog-columns > div > div:nth-child(2) ul li {
     color: #e0e0e0;
-    font-size: 15px;
-    line-height: 1.4;
-    margin: 0 0 24px 0;
+    font-size: 16px;
+    line-height: 1.3;
+    margin-bottom: 24px;
+    font-weight: 300;
 }
-.sidebar-widget.latest-posts p:last-child {
+
+.columns.blog-columns > div > div:nth-child(2) ul li:last-child {
     margin-bottom: 0;
 }
-.sidebar-widget.latest-posts a {
-    color: var(--brand-accent, #00b69a);
-    font-size: 14px;
+
+.columns.blog-columns > div > div:nth-child(2) ul li a {
+    color: #00c0e3;
+    font-size: 15px;
     font-weight: 700;
     text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
     display: inline-block;
-    margin-top: 4px;
-}
-.sidebar-widget.latest-posts a:hover {
-    color: white;
-    text-decoration: underline;
+    margin-top: 6px;
 }
 
-/* 3. Accordion / Dropdown Widgets */
-.dropdown-widget {
+.columns.blog-columns > div > div:nth-child(2) ul li a:hover {
+    color: white;
+}
+
+/* 3. Dropdowns (Targeting the OL) */
+.columns.blog-columns > div > div:nth-child(2) ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.columns.blog-columns > div > div:nth-child(2) ol li {
     border: 1px solid #e0e0e0;
-    padding: 16px 20px;
+    padding: 18px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-weight: 700;
-    color: var(--text-color);
+    color: #111;
     background: #fff;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
+    margin: 0;
     transition: background 0.2s ease;
-    border-radius: 6px;
-    box-shadow: 0 1px 3px rgb(0 0 0 / 2%);
 }
-.dropdown-widget:hover {
+
+.columns.blog-columns > div > div:nth-child(2) ol li:hover {
     background: #f8f8f8;
 }
-.dropdown-widget .dropdown-arrow {
-    background-color: var(--brand-dark, #0b2b32);
+
+/* Make the ▼ symbol look like a dark button */
+.columns.blog-columns > div > div:nth-child(2) ol li strong {
+    background-color: #111a22;
     color: white;
-    font-size: 10px;
-    width: 24px;
-    height: 24px;
+    font-size: 12px;
+    width: 32px;
+    height: 32px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border-radius: 2px;
+    margin: -18px -20px;
+    padding: 18px;
 }
 
 /* ==========================================================================
@@ -747,25 +762,36 @@ main .section.highlight {
     background: transparent;
 }
 
-/* 2. "Labels:" Text */
+/* 2. "Labels:" Text (Floats left to sit inline with the pills) */
 .columns.blog-columns > div > div:nth-child(1) hr:nth-of-type(1) + p {
-    display: inline-block;
+    float: left;
     margin-right: 12px;
+    margin-top: 6px; /* Aligns the text vertically with the pill boxes */
     margin-bottom: 0;
-    vertical-align: middle;
-    color: #555;
+    color: #131313;
     font-size: 16px;
 }
 
-/* 3. Label Pills (The <ul> list) */
+/* 3. Label Pills (The <ul> list forces a row layout) */
 .columns.blog-columns > div > div:nth-child(1) hr:nth-of-type(1) + p + ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: inline-flex;
+    display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    vertical-align: middle;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    overflow: hidden; /* Clears the float so it stays perfectly inline */
+}
+
+.columns.blog-columns > div > div:nth-child(1) hr:nth-of-type(1) + p + ul li {
+    background-color: #f0f0f0;
+    color: #555;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+    text-transform: capitalize; /* Optional: Capitalizes the first letter */
 }
 
 .columns.blog-columns > div > div:nth-child(1) hr:nth-of-type(1) + p + ul li {
@@ -803,13 +829,13 @@ main .section.highlight {
     border-radius: 50%;
     display: block;
 }
-
 /* 6. Author Name */
 .columns.blog-columns > div > div:nth-child(1) hr:nth-of-type(2) + p + h4 {
     margin-top: 0;
     padding-top: 8px;
     font-size: 24px;
     color: #131313;
+    margin-left: 172px; /* Forces text to stay in a strict right column */
 }
 
 /* 7. Author Job Title */
@@ -819,6 +845,7 @@ main .section.highlight {
     font-weight: 400;
     margin-top: 0;
     margin-bottom: 16px;
+    margin-left: 172px; /* Forces text to stay in a strict right column */
 }
 
 /* 8. Author Bio */
@@ -834,6 +861,7 @@ main .section.highlight {
     font-size: 15px;
     line-height: 1.6;
     margin-top: 0;
+    margin-left: 172px; /* Prevents wrapping underneath the floated image */
 }
 
 /* Clearfix to ensure the bio doesn't bleed out of the column */
