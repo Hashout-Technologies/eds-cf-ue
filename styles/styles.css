@@ -600,3 +600,245 @@ main .section.highlight {
     justify-content: center;
     border-radius: 2px;
 }
+
+/* ==========================================================================
+   Blog Columns Overrides (Prevents interference from columns.css)
+   ========================================================================== */
+
+@media (width >= 900px) {
+    /* Overrides the default 2.2fr 1fr grid from columns.css */
+    .columns.blog-columns > div {
+        grid-template-columns: 1fr 340px;
+        gap: 60px;
+    }
+}
+
+/* Strip the white card background, padding, and shadow from the right sidebar container.
+   We leave the negative margin-top (-80px/-120px) intact from columns.css 
+   so the sidebar aligns perfectly with the main content card over the hero section. */
+.columns.blog-columns > div > div:nth-child(2) {
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+/* ==========================================================================
+   Blog Sidebar Widgets Styling
+   ========================================================================== */
+
+.blog-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 1. Search Box */
+.sidebar-search input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background: #fff;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 2%);
+}
+.sidebar-search input:focus {
+    outline: none;
+    border-color: var(--brand-dark, #0b2b32);
+}
+
+/* 2. Latest Posts Dark Widget */
+.sidebar-widget.latest-posts {
+    background-color: var(--brand-dark-2, #0f3740);
+    border-top: 4px solid var(--brand-accent, #00b69a);
+    padding: 24px 32px;
+    color: white;
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgb(0 0 0 / 6%); /* Re-applies the shadow directly to the widget */
+}
+.sidebar-widget.latest-posts h3 {
+    color: white;
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-size: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 16px;
+}
+.sidebar-widget.latest-posts p {
+    color: #e0e0e0;
+    font-size: 15px;
+    line-height: 1.4;
+    margin: 0 0 24px 0;
+}
+.sidebar-widget.latest-posts p:last-child {
+    margin-bottom: 0;
+}
+.sidebar-widget.latest-posts a {
+    color: var(--brand-accent, #00b69a);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    margin-top: 4px;
+}
+.sidebar-widget.latest-posts a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* 3. Accordion / Dropdown Widgets */
+.dropdown-widget {
+    border: 1px solid #e0e0e0;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    color: var(--text-color);
+    background: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.2s ease;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 2%);
+}
+.dropdown-widget:hover {
+    background: #f8f8f8;
+}
+.dropdown-widget .dropdown-arrow {
+    background-color: var(--brand-dark, #0b2b32);
+    color: white;
+    font-size: 10px;
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   Labels Styling
+   ========================================================================== */
+
+.label-pill {
+    display: inline-block;
+    background: #f0f0f0;
+    padding: 4px 12px;
+    margin: 0 4px 4px 0;
+    border-radius: 16px;
+    font-size: 13px;
+    color: #555;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   Blog Labels & Author Profile (Structural Target Overrides)
+   ========================================================================== */
+
+/* 1. Labels Marker (First HR - keep it invisible) */
+.columns.blog-columns > div > div:nth-child(1) hr:nth-of-type(1) {
+    border: 0;
+    height: 1px;
+    margin: 40px 0 0 0;
+    background: transparent;
+}
+
+/* 2. "Labels:" Text */
+.columns.blog-columns > div > div:nth-child(1) hr:nth-of-type(1) + p {
+    display: inline-block;
+    margin-right: 12px;
+    margin-bottom: 0;
+    vertical-align: middle;
+    color: #555;
+    font-size: 16px;
+}
+
+/* 3. Label Pills (The <ul> list) */
+.columns.blog-columns > div > div:nth-child(1) hr:nth-of-type(1) + p + ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    vertical-align: middle;
+}
+
+.columns.blog-columns > div > div:nth-child(1) hr:nth-of-type(1) + p + ul li {
+    background-color: #f0f0f0;
+    color: #555;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* 4. Author Separator Line (Second HR) */
+.columns.blog-columns > div > div:nth-child(1) hr:nth-of-type(2) {
+    border: 0;
+    border-top: 1px solid #e0e0e0;
+    margin: 40px 0;
+}
+
+/* 5. Author Image Container */
+.columns.blog-columns > div > div:nth-child(1) hr:nth-of-type(2) + p {
+    float: left;
+    margin-right: 32px;
+    margin-bottom: 16px;
+    width: 140px;
+    height: 140px;
+}
+
+/* Make Author Image Circular */
+.columns.blog-columns > div > div:nth-child(1) hr:nth-of-type(2) + p picture,
+.columns.blog-columns > div > div:nth-child(1) hr:nth-of-type(2) + p img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+/* 6. Author Name */
+.columns.blog-columns > div > div:nth-child(1) hr:nth-of-type(2) + p + h4 {
+    margin-top: 0;
+    padding-top: 8px;
+    font-size: 24px;
+    color: #131313;
+}
+
+/* 7. Author Job Title */
+.columns.blog-columns > div > div:nth-child(1) hr:nth-of-type(2) + p + h4 + h5 {
+    color: #505050;
+    font-size: 17px;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+/* 8. Author Bio */
+.columns.blog-columns
+    > div
+    > div:nth-child(1)
+    hr:nth-of-type(2)
+    + p
+    + h4
+    + h5
+    + p {
+    color: #505050;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-top: 0;
+}
+
+/* Clearfix to ensure the bio doesn't bleed out of the column */
+.columns.blog-columns > div > div:nth-child(1)::after {
+    content: "";
+    display: table;
+    clear: both;
+}
