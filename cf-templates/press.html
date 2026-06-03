@@ -6,8 +6,8 @@
   <body>
     <header></header>
     <main>
+      
       <div>
-        
         <div class="hero">
           <div>
             <div>
@@ -15,46 +15,104 @@
             </div>
           </div>
         </div>
-        
-        <div class="content">
-          <div>
-            <div>
-              {{{properties.elements.blogDescription.value}}}
-            </div>
-          </div>
-        </div>
-
-        <div class="labels">
-          <div>
-            <div>
-              <p>Labels: 
-                {{#properties.elements.labels.value}}
-                  <span class="label-pill">{{.}}</span>
-                {{/properties.elements.labels.value}}
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="author-profile">
-          <div>
-            <div>
-              <p>
-                <picture>
-                  <img src="https://author-p43719-e1936337.adobeaemcloud.com{{{properties.elements.image.value}}}" alt="Author Image">
-                </picture>
-              </p>
-            </div>
-            <div>
-              {{{properties.elements.authorDetails.value}}}
-            </div>
-          </div>
-        </div>
-
       </div>
+
+      <div>
+        <div class="blog-layout-grid">
+          
+          <div class="blog-main-content">
+            
+            <div class="social-share">
+              <span title="Share on Facebook">f</span>
+              <span title="Share on X">X</span>
+              <span title="Share on LinkedIn">in</span>
+            </div>
+
+            <div class="article-meta">
+              March 17, 2020
+            </div>
+
+            <div class="content">
+              <div>
+                <div>
+                  {{{properties.elements.blogDescription.value}}}
+                </div>
+              </div>
+            </div>
+
+            <div class="labels">
+              <div>
+                <div>
+                  <p>Labels: 
+                    {{#properties.elements.labels.value}}
+                      <span class="label-pill">{{.}}</span>
+                    {{/properties.elements.labels.value}}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="author-profile">
+              <div>
+                <div>
+                  <picture>
+                    <img src="https://author-p43719-e1936337.adobeaemcloud.com{{{properties.elements.image.value}}}" alt="Author Image">
+                  </picture>
+                </div>
+                <div>
+                  {{{properties.elements.authorDetails.value}}}
+                </div>
+              </div>
+            </div>
+            
+          </div>
+
+          <aside class="blog-sidebar">
+            
+            <div class="sidebar-search">
+              <input type="text" placeholder="Search..." aria-label="Search blog">
+            </div>
+
+            <div class="sidebar-widget latest-posts">
+              <h3>Latest Posts</h3>
+              <article>
+                <p>The Half of Your Attack Surface Nobody Owns</p>
+                <a href="#">Read more »</a>
+              </article>
+              <article>
+                <p>Infoblox Earns Terraform Partner Premier Status for NIOS Provider</p>
+                <a href="#">Read more »</a>
+              </article>
+              <article>
+                <p>What 550 Security Leaders Just Told Us about the Age of AI, and Why Preemptive Digital Risk Protection Can't Wait</p>
+                <a href="#">Read more »</a>
+              </article>
+              <article>
+                <p>Lookalike Domains Expose the iPhone Theft Economy</p>
+                <a href="#">Read more »</a>
+              </article>
+            </div>
+
+            <div class="dropdown-widget">
+              <span>Popular Topics</span>
+              <span class="dropdown-arrow">▼</span>
+            </div>
+            <div class="dropdown-widget">
+              <span>Categories</span>
+              <span class="dropdown-arrow">▼</span>
+            </div>
+            <div class="dropdown-widget">
+              <span>Authors</span>
+              <span class="dropdown-arrow">▼</span>
+            </div>
+
+          </aside>
+          
+        </div>
+      </div>
+      
     </main>
     <footer></footer>
   </body>
 </html>
-
 

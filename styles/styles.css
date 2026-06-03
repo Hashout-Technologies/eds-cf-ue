@@ -411,3 +411,192 @@ main .section.highlight {
     background: #fff;
     cursor: pointer;
 }
+
+/* ==========================================================================
+   Blog Layout: Two-Column Grid
+   ========================================================================== */
+
+.blog-layout-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 24px;
+}
+
+@media (width >= 900px) {
+    .blog-layout-grid {
+        /* roughly a 70% / 30% split for content vs sidebar */
+        grid-template-columns: 1fr 340px;
+        gap: 60px;
+        padding: 0 32px;
+    }
+}
+
+/* ==========================================================================
+   Left Column: Content & Social
+   ========================================================================== */
+
+.blog-main-content {
+    position: relative;
+}
+
+/* Float social share icons to the left on desktop */
+@media (width >= 900px) {
+    .blog-main-content {
+        padding-left: 60px; /* Make room for absolute positioned social icons */
+    }
+
+    .social-share {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+/* Mobile Social Share Fallback */
+@media (width < 900px) {
+    .social-share {
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+        margin-bottom: 24px;
+    }
+}
+
+.social-share span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    color: var(--dark-color);
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.social-share span:hover {
+    background-color: var(--brand-dark);
+    color: white;
+    border-color: var(--brand-dark);
+}
+
+.article-meta {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 32px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   Right Column: Sidebar Widgets
+   ========================================================================== */
+
+.blog-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 1. Search Box */
+.sidebar-search input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 0;
+    font-size: 16px;
+    box-sizing: border-box;
+    background: url("/icons/search.svg") no-repeat right 16px center;
+    background-size: 20px;
+}
+
+.sidebar-search input:focus {
+    outline: none;
+    border-color: var(--brand-dark);
+}
+
+/* 2. Latest Posts Dark Widget */
+.sidebar-widget.latest-posts {
+    background-color: var(--brand-dark-2, #0f3740);
+    border-top: 4px solid var(--brand-accent, #00b69a);
+    padding: 24px 32px;
+    color: white;
+}
+
+.sidebar-widget.latest-posts h3 {
+    color: white;
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-size: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 16px;
+}
+
+.sidebar-widget.latest-posts article {
+    margin-bottom: 24px;
+}
+
+.sidebar-widget.latest-posts article:last-child {
+    margin-bottom: 0;
+}
+
+.sidebar-widget.latest-posts article p {
+    color: #e0e0e0;
+    font-size: 15px;
+    line-height: 1.4;
+    margin: 0 0 8px 0;
+}
+
+.sidebar-widget.latest-posts article a {
+    color: var(--brand-accent, #00b69a);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.sidebar-widget.latest-posts article a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* 3. Accordion / Dropdown Widgets */
+.dropdown-widget {
+    border: 1px solid #e0e0e0;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    color: var(--text-color);
+    background: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.2s ease;
+}
+
+.dropdown-widget:hover {
+    background: #f8f8f8;
+}
+
+.dropdown-widget .dropdown-arrow {
+    background-color: var(--brand-dark);
+    color: white;
+    font-size: 10px;
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+}
