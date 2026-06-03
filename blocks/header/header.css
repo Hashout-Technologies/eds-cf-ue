@@ -185,6 +185,32 @@ header nav .nav-sections ul > li > ul > li {
   font-weight: 400;
 }
 
+/* ── Mobile nav menu panel ───────────────────────────────── */
+@media (width < 900px) {
+  header nav[aria-expanded='true'] .nav-sections {
+    padding: 5px 0 24px;
+    border-top: 1px solid #e8e8e8;
+  }
+
+  header nav[aria-expanded='true'] .nav-sections ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  header nav[aria-expanded='true'] .nav-sections ul > li {
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 5px 0;
+    letter-spacing: 0.01em;
+  }
+
+  header nav[aria-expanded='true'] .nav-sections ul > li > * {
+    display: block;
+    padding: 14px 24px;
+  }
+}
+
 @media (width >= 900px) {
   header nav .nav-sections {
     display: block;
