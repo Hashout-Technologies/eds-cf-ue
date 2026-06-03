@@ -141,18 +141,24 @@ export function decorateSearch(main) {
   );
   if (!rightColumn) return;
 
-  // If there's already a real input, nothing to do
-  if (rightColumn.querySelector("input.blog-search-input")) return;
+  let input = rightColumn.querySelector("input.blog-search-input");
 
-  // Fallback: replace a <p>Search...</p> placeholder with a real input
-  const searchPlaceholder = rightColumn.querySelector("p");
-  if (searchPlaceholder && searchPlaceholder.textContent.includes("Search")) {
-    const input = document.createElement("input");
+  if (!input) {
+    input = document.createElement("input");
     input.type = "text";
-    input.placeholder = "Search...";
     input.className = "blog-search-input";
-    searchPlaceholder.replaceWith(input);
+
+    const searchP = [...rightColumn.querySelectorAll("p")].find((p) =>
+      p.textContent.toLowerCase().includes("search"),
+    );
+    if (searchP) {
+      searchP.replaceWith(input);
+    } else {
+      rightColumn.prepend(input);
+    }
   }
+
+  input.removeAttribute("placeholder");
 }
 
 /**
