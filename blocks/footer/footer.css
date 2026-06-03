@@ -1,20 +1,147 @@
+/* ── Footer shell ─────────────────────────────────────────── */
 footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  background-color: #f5f5f3;
+  border-top: 1px solid #e0e0da;
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  color: #5a6473;
 }
 
 footer .footer > div {
-  margin: auto;
+  margin: 0 auto;
   max-width: 1200px;
-  padding: 40px 24px 24px;
+  padding: 0 24px;
 }
 
-footer .footer p {
+/* ── 4-column link grid ───────────────────────────────────── */
+footer .footer .footer-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px 24px;
+  padding: 48px 0 40px;
+}
+
+footer .footer .footer-col h4 {
+  margin: 0 0 16px;
+  font-family: var(--heading-font-family);
+  font-size: 28px;
+  font-weight: 700;
+  color: #101820;
+  letter-spacing: -0.01em;
+}
+
+footer .footer .footer-col h4 strong {
+  font-weight: inherit;
+}
+
+footer .footer .footer-col ul {
   margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
+footer .footer .footer-col li,
+footer .footer .footer-legal li {
+  margin: 0;
+  padding: 0;
+}
+
+footer .footer .footer-col a {
+  color: #5a6473;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+footer .footer .footer-legal a {
+  color: #5a6473;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+footer .footer .footer-col li + li {
+  margin-top: 10px;
+}
+
+footer .footer .footer-col a:hover,
+footer .footer .footer-legal a:hover {
+  color: #20a752;
+}
+
+/* ── Social icon strip ────────────────────────────────────── */
+footer .footer .footer-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  padding: 28px 0;
+  border-top: 1px solid #d8dde3;
+  border-bottom: 1px solid #d8dde3;
+}
+
+footer .footer .footer-social p {
+  margin: 0;
+  line-height: 0;
+}
+
+footer .footer .footer-social img {
+  width: auto;
+  height: 28px;
+  display: block;
+  transition: opacity 0.15s;
+}
+
+footer .footer .footer-social img:hover {
+  opacity: 0.75;
+}
+
+/* ── Legal bar ────────────────────────────────────────────── */
+footer .footer .footer-legal {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 20px 0 28px;
+}
+
+footer .footer .footer-legal p {
+  margin: 0;
+  font-size: 13px;
+  color: #5a6473;
+}
+
+footer .footer .footer-legal ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+footer .footer .footer-legal li + li::before {
+  content: '|';
+  margin: 0 8px;
+  color: #c0c7d0;
+}
+
+/* ── Desktop: switch to 4-column grid ────────────────────── */
 @media (width >= 900px) {
   footer .footer > div {
-    padding: 40px 32px 24px;
+    padding: 0 32px;
+  }
+
+  footer .footer .footer-columns {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0 48px;
+    padding: 56px 0 48px;
+  }
+
+  footer .footer .footer-legal {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 0 32px;
   }
 }
